@@ -1,0 +1,30 @@
+library(shiny)
+library(tagsinput)
+library(shinydashboard)
+library(shinyWidgets)
+library(recharts)
+
+shinyServer(function(input, output, session) {
+  ############
+  # user login test
+  shinyjs::addClass(selector = "body", class = "sidebar-collapse")
+  shinyjs::removeClass(selector = "header", class = "main-header")
+  
+  source("server/login.R", local = TRUE)$value
+  
+  source("server/sidebar.R", local = TRUE)$value
+  
+  source("server/tab_prolist.R", local = TRUE)$value
+  
+  source("server/tab_fundCmpList.R", local = TRUE)$value
+  
+  source("server/tab_sum1.R", local = TRUE)$value
+  
+  source("server/tab_sum2.R", local = TRUE)$value
+  
+  source("server/tab_cmpare.R", local = TRUE)$value
+  
+  source("server/tab_xtzg.R", local = TRUE)$value
+})
+
+

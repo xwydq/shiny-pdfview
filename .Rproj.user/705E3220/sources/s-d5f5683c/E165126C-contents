@@ -1,0 +1,87 @@
+options(stringsAsFactors=FALSE, scipen=10, digits=4)
+## 修改上传文件大小限制--200M
+options(shiny.maxRequestSize=200*1024^2)
+# Cairo包的PNG设备似乎无法显示中文字符，强制使用R自身的png()设备
+options(shiny.usecairo = FALSE)
+
+## 添加iframe源的前缀路径
+# options(dir_save_doc = "/home/xuwy/upload_files")
+options(dir_save_doc = "/home/xuwy/projectJC/pdfView")
+addResourcePath("prodir", options()$dir_save_doc)
+addResourcePath("pdfView", "/home/xuwy/projectJC/pdfView")
+
+
+options(mysql = list(
+  "host" = "172.19.101.27",
+  "port" = 3306,
+  "user" = "root",
+  "password" = "jcplanb.com"
+))
+databaseName = "fund"
+
+
+library(shiny)
+library(shinyjs)
+library(shinydashboard)
+library(shinyWidgets)
+library(timevis)
+library(readr)
+library(RMySQL)
+library(dplyr)
+library(lubridate)
+library(dygraphs)
+library(readxl)
+library(stringr)
+library(reshape2)
+library(xts)
+library(htmlwidgets) #JS function
+library(jsonlite)
+library(recharts)
+library(data.table)
+library(tools)
+library(digest)
+
+
+mapData <- head(mapTestData_chs, 5)
+e1 = eMap(mapData, namevar=~stdName, datavar = ~val1 + val2)
+
+source("tools/generate_map.R")
+source("tools/login_auth.R")
+
+source("init/init_value.R")
+source("init/tab_fundCmpList.R")
+source("init/tab_prolist.R")
+source("init/tab_sum.R")
+source("init/tab_cmpare.R")
+source("init/tab_xtzg.R")
+
+fortune_company = q_fortuneCom()
+fortune_nm = unique(fortune_company$fortune_company)
+
+
+#######################
+source("ui/login.R", local = TRUE)$value
+
+mainbody <- div(
+  tabItems(
+    source("ui/tab_prolist.R", local = TRUE)$value,
+    source("ui/tab_fundCmpList.R", local = TRUE)$value,
+    source("ui/tab_sum1.R", local = TRUE)$value,
+    source("ui/tab_sum2.R", local = TRUE)$value,
+    source("ui/tab_cmpare.R", local = TRUE)$value,
+    source("ui/tab_xtzg.R", local = TRUE)$value
+  )
+)
+
+header <- dashboardHeader(title = "产品地图-私募",
+                          titleWidth = 180,
+                          dropdownMenuOutput("messageMenu"))
+sidebar <- dashboardSidebar(width = 180,
+                            uiOutput("sidebarpanel"))
+
+
+body <- dashboardBody(
+  shinyjs::useShinyjs(),
+  includeCSS("www/style.css"),
+  uiOutput("body"))
+#######################

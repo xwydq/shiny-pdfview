@@ -1,0 +1,134 @@
+## 产品列表详细信息维护
+
+# ## variable value
+# vt5 = reactiveValues(t51_fileId = NULL)
+
+## upload (update to table)
+observeEvent(input$t51_uploadFile, {
+  if(is.null(vt5$t50_prodtID)){
+    sendSweetAlert(
+      session, title = "提示 !!", text = "请先选择对应产品", type = "warning"
+    )
+    return()
+  }
+  
+  inFile <- input$t51_uploadFile
+  if (is.null(inFile) || is.null(vt5$t50_prodtID))
+    return()
+  
+  if(!(q_fileMatch(vt5$t50_prodtID, USER$username) || (USER$username %in% admin_oa))){
+    # useShinyjs()
+    # disable('t51_uploadFile')
+    showNotification("该产品文件已有人维护！！")
+    return()
+  }
+  
+  if(tolower(file_ext(inFile$name)) %in% 'pdf'){
+    ## 复制文件到指定路径
+    t42_maxid = upload_doc(inFile$name, inFile$datapath, vt5$t50_prodtID, USER$username)
+    vt5$t51_prodtFiles = q_proFiles(vt5$t50_prodtID)
+  }else{
+    showNotification("该文件类型不支持上传")
+  }
+})
+
+## pdf
+output$iframe_source <- renderUI({
+  if(is.null(vt5$t51_fileId)){
+    return()
+  }
+  tmp = vt5$t51_prodtFiles[vt5$t51_prodtFiles$id == vt5$t51_fileId, ]
+  # iframe_source = tags$iframe(src=sprintf("prodir/%s.pdf", tmp$save_md5),
+  #                             height=600, width='100%',
+  #                             style="#download{visibility:hidden;}")
+  iframe_source = tags$iframe(src=sprintf("pdfView/generic/web/viewer.html?file=../../%s.pdf", tmp$save_md5),
+                              height=600, width='100%')
+  # iframe_source = tags$iframe(src="pdfView/generic/web/viewer.html?file=../../18.pdf",
+  #                             height=600, width='100%')
+  # iframe_source = tags$iframe(src="pdfView/generic/web/viewer.html?file=../../76790.pdf",
+  #                             height=600, width='100%')
+  iframe_source
+})
+
+
+## DT 已经上传的文档列表
+output$t51_DTList <- DT::renderDataTable({
+  if(is.null(vt5$t51_prodtFiles)){
+    return(NULL)
+  }else{
+    df_dt = vt5$t51_prodtFiles %>%
+      select(id, file_nm)
+    df_dt[["modify"]] <- paste0('
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary deletett51de" id=t51de_', df_dt$id,'>删除</button>&nbsp;&nbsp;
+                                </div>
+                                ')
+    df_dt
+  }
+}, escape = FALSE, width = "100%",
+rownames=FALSE,
+colnames = c("编码", "文件名", "编辑"),
+server = FALSE, selection = "single",
+extensions = 'Buttons',
+options = list(
+  dom = 't',
+  language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'),
+  pageLength = 20,
+  lengthChange = TRUE,
+  # autoWidth = TRUE,
+  initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#e1e1e1', 'color': '#000'});",
+    "}")
+))
+
+
+## modify button act-- get default value
+observeEvent({
+  input$t51_DTClick
+},{
+  if(input$t51_DTClickID %like% "t51de"){
+    vt5$t51_fileId = gsub("t51de_","",input$t51_DTClickID)
+    showModal(t51_dMdlDel)
+  }
+})
+
+t51_dMdlDel <- modalDialog(
+  fluidRow(
+    column(6, actionButton("t51_dCY", "Yes", icon("check-square"), class="btn-danger")),
+    column(6, actionButton("t51_dCN", "No", class="btn-primary"))),
+  footer = NULL,
+  size = "s",
+  title = "确认是否删除",
+  easyClose = TRUE
+)
+
+## modify delete button act-- bsModel delete
+observeEvent({
+  input$t51_dCY
+},{
+  if(!(q_fileMatch(vt5$t50_prodtID, USER$username) || (USER$username %in% admin_oa))){
+    showNotification("无权限删除")
+    removeModal()
+    return()
+  }
+  
+  d_proFiles(vt5$t51_fileId)
+  vt5$t51_prodtFiles = q_proFiles(vt5$t50_prodtID)
+  removeModal()
+})
+
+observeEvent({
+  input$t51_dCN
+},{
+  removeModal()
+})
+
+
+observe({
+  if (!is.null(input$t51_DTList_rows_selected)){
+    tmp = vt5$t51_prodtFiles[input$t51_DTList_rows_selected, ]
+    vt5$t51_fileId = tmp$id
+  }
+})
+

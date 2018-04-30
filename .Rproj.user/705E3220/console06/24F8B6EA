@@ -1,0 +1,800 @@
+]0;~/shiny_app/pdf_view[?1034h[xuwy@planB01-pro pdf_view]$ tr
+tr: 缺少操作数
+Try 'tr --help' for more information.
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ tr ./
+tr: "./" 后缺少操作数
+当进行替换操作时必须给定两组字符串。
+Try 'tr --help' for more information.
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ tree
+.
+├── app.R
+├── pdf_view.Rproj
+└── www
+    └── pdfView
+        ├── 0b781915c086876a5eac6b1b30ba0d18.pdf
+        ├── generic
+        │   ├── build
+        │   │   ├── pdf.js
+        │   │   └── pdf.worker.js
+        │   ├── LICENSE
+        │   └── web
+        │       ├── cmaps
+        │       │   ├── 78-EUC-H.bcmap
+        │       │   ├── 78-EUC-V.bcmap
+        │       │   ├── 78-H.bcmap
+        │       │   ├── 78ms-RKSJ-H.bcmap
+        │       │   ├── 78ms-RKSJ-V.bcmap
+        │       │   ├── 78-RKSJ-H.bcmap
+        │       │   ├── 78-RKSJ-V.bcmap
+        │       │   ├── 78-V.bcmap
+        │       │   ├── 83pv-RKSJ-H.bcmap
+        │       │   ├── 90msp-RKSJ-H.bcmap
+        │       │   ├── 90msp-RKSJ-V.bcmap
+        │       │   ├── 90ms-RKSJ-H.bcmap
+        │       │   ├── 90ms-RKSJ-V.bcmap
+        │       │   ├── 90pv-RKSJ-H.bcmap
+        │       │   ├── 90pv-RKSJ-V.bcmap
+        │       │   ├── Add-H.bcmap
+        │       │   ├── Add-RKSJ-H.bcmap
+        │       │   ├── Add-RKSJ-V.bcmap
+        │       │   ├── Add-V.bcmap
+        │       │   ├── Adobe-CNS1-0.bcmap
+        │       │   ├── Adobe-CNS1-1.bcmap
+        │       │   ├── Adobe-CNS1-2.bcmap
+        │       │   ├── Adobe-CNS1-3.bcmap
+        │       │   ├── Adobe-CNS1-4.bcmap
+        │       │   ├── Adobe-CNS1-5.bcmap
+        │       │   ├── Adobe-CNS1-6.bcmap
+        │       │   ├── Adobe-CNS1-UCS2.bcmap
+        │       │   ├── Adobe-GB1-0.bcmap
+        │       │   ├── Adobe-GB1-1.bcmap
+        │       │   ├── Adobe-GB1-2.bcmap
+        │       │   ├── Adobe-GB1-3.bcmap
+        │       │   ├── Adobe-GB1-4.bcmap
+        │       │   ├── Adobe-GB1-5.bcmap
+        │       │   ├── Adobe-GB1-UCS2.bcmap
+        │       │   ├── Adobe-Japan1-0.bcmap
+        │       │   ├── Adobe-Japan1-1.bcmap
+        │       │   ├── Adobe-Japan1-2.bcmap
+        │       │   ├── Adobe-Japan1-3.bcmap
+        │       │   ├── Adobe-Japan1-4.bcmap
+        │       │   ├── Adobe-Japan1-5.bcmap
+        │       │   ├── Adobe-Japan1-6.bcmap
+        │       │   ├── Adobe-Japan1-UCS2.bcmap
+        │       │   ├── Adobe-Korea1-0.bcmap
+        │       │   ├── Adobe-Korea1-1.bcmap
+        │       │   ├── Adobe-Korea1-2.bcmap
+        │       │   ├── Adobe-Korea1-UCS2.bcmap
+        │       │   ├── B5-H.bcmap
+        │       │   ├── B5pc-H.bcmap
+        │       │   ├── B5pc-V.bcmap
+        │       │   ├── B5-V.bcmap
+        │       │   ├── CNS1-H.bcmap
+        │       │   ├── CNS1-V.bcmap
+        │       │   ├── CNS2-H.bcmap
+        │       │   ├── CNS2-V.bcmap
+        │       │   ├── CNS-EUC-H.bcmap
+        │       │   ├── CNS-EUC-V.bcmap
+        │       │   ├── ETen-B5-H.bcmap
+        │       │   ├── ETen-B5-V.bcmap
+        │       │   ├── ETenms-B5-H.bcmap
+        │       │   ├── ETenms-B5-V.bcmap
+        │       │   ├── ETHK-B5-H.bcmap
+        │       │   ├── ETHK-B5-V.bcmap
+        │       │   ├── EUC-H.bcmap
+        │       │   ├── EUC-V.bcmap
+        │       │   ├── Ext-H.bcmap
+        │       │   ├── Ext-RKSJ-H.bcmap
+        │       │   ├── Ext-RKSJ-V.bcmap
+        │       │   ├── Ext-V.bcmap
+        │       │   ├── GB-EUC-H.bcmap
+        │       │   ├── GB-EUC-V.bcmap
+        │       │   ├── GB-H.bcmap
+        │       │   ├── GBK2K-H.bcmap
+        │       │   ├── GBK2K-V.bcmap
+        │       │   ├── GBK-EUC-H.bcmap
+        │       │   ├── GBK-EUC-V.bcmap
+        │       │   ├── GBKp-EUC-H.bcmap
+        │       │   ├── GBKp-EUC-V.bcmap
+        │       │   ├── GBpc-EUC-H.bcmap
+        │       │   ├── GBpc-EUC-V.bcmap
+        │       │   ├── GBT-EUC-H.bcmap
+        │       │   ├── GBT-EUC-V.bcmap
+        │       │   ├── GBT-H.bcmap
+        │       │   ├── GBTpc-EUC-H.bcmap
+        │       │   ├── GBTpc-EUC-V.bcmap
+        │       │   ├── GBT-V.bcmap
+        │       │   ├── GB-V.bcmap
+        │       │   ├── Hankaku.bcmap
+        │       │   ├── H.bcmap
+        │       │   ├── Hiragana.bcmap
+        │       │   ├── HKdla-B5-H.bcmap
+        │       │   ├── HKdla-B5-V.bcmap
+        │       │   ├── HKdlb-B5-H.bcmap
+        │       │   ├── HKdlb-B5-V.bcmap
+        │       │   ├── HKgccs-B5-H.bcmap
+        │       │   ├── HKgccs-B5-V.bcmap
+        │       │   ├── HKm314-B5-H.bcmap
+        │       │   ├── HKm314-B5-V.bcmap
+        │       │   ├── HKm471-B5-H.bcmap
+        │       │   ├── HKm471-B5-V.bcmap
+        │       │   ├── HKscs-B5-H.bcmap
+        │       │   ├── HKscs-B5-V.bcmap
+        │       │   ├── Katakana.bcmap
+        │       │   ├── KSC-EUC-H.bcmap
+        │       │   ├── KSC-EUC-V.bcmap
+        │       │   ├── KSC-H.bcmap
+        │       │   ├── KSC-Johab-H.bcmap
+        │       │   ├── KSC-Johab-V.bcmap
+        │       │   ├── KSCms-UHC-H.bcmap
+        │       │   ├── KSCms-UHC-HW-H.bcmap
+        │       │   ├── KSCms-UHC-HW-V.bcmap
+        │       │   ├── KSCms-UHC-V.bcmap
+        │       │   ├── KSCpc-EUC-H.bcmap
+        │       │   ├── KSCpc-EUC-V.bcmap
+        │       │   ├── KSC-V.bcmap
+        │       │   ├── LICENSE
+        │       │   ├── NWP-H.bcmap
+        │       │   ├── NWP-V.bcmap
+        │       │   ├── RKSJ-H.bcmap
+        │       │   ├── RKSJ-V.bcmap
+        │       │   ├── Roman.bcmap
+        │       │   ├── UniCNS-UCS2-H.bcmap
+        │       │   ├── UniCNS-UCS2-V.bcmap
+        │       │   ├── UniCNS-UTF16-H.bcmap
+        │       │   ├── UniCNS-UTF16-V.bcmap
+        │       │   ├── UniCNS-UTF32-H.bcmap
+        │       │   ├── UniCNS-UTF32-V.bcmap
+        │       │   ├── UniCNS-UTF8-H.bcmap
+        │       │   ├── UniCNS-UTF8-V.bcmap
+        │       │   ├── UniGB-UCS2-H.bcmap
+        │       │   ├── UniGB-UCS2-V.bcmap
+        │       │   ├── UniGB-UTF16-H.bcmap
+        │       │   ├── UniGB-UTF16-V.bcmap
+        │       │   ├── UniGB-UTF32-H.bcmap
+        │       │   ├── UniGB-UTF32-V.bcmap
+        │       │   ├── UniGB-UTF8-H.bcmap
+        │       │   ├── UniGB-UTF8-V.bcmap
+        │       │   ├── UniJIS2004-UTF16-H.bcmap
+        │       │   ├── UniJIS2004-UTF16-V.bcmap
+        │       │   ├── UniJIS2004-UTF32-H.bcmap
+        │       │   ├── UniJIS2004-UTF32-V.bcmap
+        │       │   ├── UniJIS2004-UTF8-H.bcmap
+        │       │   ├── UniJIS2004-UTF8-V.bcmap
+        │       │   ├── UniJISPro-UCS2-HW-V.bcmap
+        │       │   ├── UniJISPro-UCS2-V.bcmap
+        │       │   ├── UniJISPro-UTF8-V.bcmap
+        │       │   ├── UniJIS-UCS2-H.bcmap
+        │       │   ├── UniJIS-UCS2-HW-H.bcmap
+        │       │   ├── UniJIS-UCS2-HW-V.bcmap
+        │       │   ├── UniJIS-UCS2-V.bcmap
+        │       │   ├── UniJIS-UTF16-H.bcmap
+        │       │   ├── UniJIS-UTF16-V.bcmap
+        │       │   ├── UniJIS-UTF32-H.bcmap
+        │       │   ├── UniJIS-UTF32-V.bcmap
+        │       │   ├── UniJIS-UTF8-H.bcmap
+        │       │   ├── UniJIS-UTF8-V.bcmap
+        │       │   ├── UniJISX02132004-UTF32-H.bcmap
+        │       │   ├── UniJISX02132004-UTF32-V.bcmap
+        │       │   ├── UniJISX0213-UTF32-H.bcmap
+        │       │   ├── UniJISX0213-UTF32-V.bcmap
+        │       │   ├── UniKS-UCS2-H.bcmap
+        │       │   ├── UniKS-UCS2-V.bcmap
+        │       │   ├── UniKS-UTF16-H.bcmap
+        │       │   ├── UniKS-UTF16-V.bcmap
+        │       │   ├── UniKS-UTF32-H.bcmap
+        │       │   ├── UniKS-UTF32-V.bcmap
+        │       │   ├── UniKS-UTF8-H.bcmap
+        │       │   ├── UniKS-UTF8-V.bcmap
+        │       │   ├── V.bcmap
+        │       │   └── WP-Symbol.bcmap
+        │       ├── compatibility.js
+        │       ├── compressed.tracemonkey-pldi-09.pdf
+        │       ├── debugger.js
+        │       ├── images
+        │       │   ├── annotation-check.svg
+        │       │   ├── annotation-comment.svg
+        │       │   ├── annotation-help.svg
+        │       │   ├── annotation-insert.svg
+        │       │   ├── annotation-key.svg
+        │       │   ├── annotation-newparagraph.svg
+        │       │   ├── annotation-noicon.svg
+        │       │   ├── annotation-note.svg
+        │       │   ├── annotation-paragraph.svg
+        │       │   ├── findbarButton-next@2x.png
+        │       │   ├── findbarButton-next.png
+        │       │   ├── findbarButton-next-rtl@2x.png
+        │       │   ├── findbarButton-next-rtl.png
+        │       │   ├── findbarButton-previous@2x.png
+        │       │   ├── findbarButton-previous.png
+        │       │   ├── findbarButton-previous-rtl@2x.png
+        │       │   ├── findbarButton-previous-rtl.png
+        │       │   ├── grabbing.cur
+        │       │   ├── grab.cur
+        │       │   ├── loading-icon.gif
+        │       │   ├── loading-small@2x.png
+        │       │   ├── loading-small.png
+        │       │   ├── secondaryToolbarButton-documentProperties@2x.png
+        │       │   ├── secondaryToolbarButton-documentProperties.png
+        │       │   ├── secondaryToolbarButton-firstPage@2x.png
+        │       │   ├── secondaryToolbarButton-firstPage.png
+        │       │   ├── secondaryToolbarButton-handTool@2x.png
+        │       │   ├── secondaryToolbarButton-handTool.png
+        │       │   ├── secondaryToolbarButton-lastPage@2x.png
+        │       │   ├── secondaryToolbarButton-lastPage.png
+        │       │   ├── secondaryToolbarButton-rotateCcw@2x.png
+        │       │   ├── secondaryToolbarButton-rotateCcw.png
+        │       │   ├── secondaryToolbarButton-rotateCw@2x.png
+        │       │   ├── secondaryToolbarButton-rotateCw.png
+        │       │   ├── shadow.png
+        │       │   ├── texture.png
+        │       │   ├── toolbarButton-bookmark@2x.png
+        │       │   ├── toolbarButton-bookmark.png
+        │       │   ├── toolbarButton-download@2x.png
+        │       │   ├── toolbarButton-download.png
+        │       │   ├── toolbarButton-menuArrows@2x.png
+        │       │   ├── toolbarButton-menuArrows.png
+        │       │   ├── toolbarButton-openFile@2x.png
+        │       │   ├── toolbarButton-openFile.png
+        │       │   ├── toolbarButton-pageDown@2x.png
+        │       │   ├── toolbarButton-pageDown.png
+        │       │   ├── toolbarButton-pageDown-rtl@2x.png
+        │       │   ├── toolbarButton-pageDown-rtl.png
+        │       │   ├── toolbarButton-pageUp@2x.png
+        │       │   ├── toolbarButton-pageUp.png
+        │       │   ├── toolbarButton-pageUp-rtl@2x.png
+        │       │   ├── toolbarButton-pageUp-rtl.png
+        │       │   ├── toolbarButton-presentationMode@2x.png
+        │       │   ├── toolbarButton-presentationMode.png
+        │       │   ├── toolbarButton-print@2x.png
+        │       │   ├── toolbarButton-print.png
+        │       │   ├── toolbarButton-search@2x.png
+        │       │   ├── toolbarButton-search.png
+        │       │   ├── toolbarButton-secondaryToolbarToggle@2x.png
+        │       │   ├── toolbarButton-secondaryToolbarToggle.png
+        │       │   ├── toolbarButton-secondaryToolbarToggle-rtl@2x.png
+        │       │   ├── toolbarButton-secondaryToolbarToggle-rtl.png
+        │       │   ├── toolbarButton-sidebarToggle@2x.png
+        │       │   ├── toolbarButton-sidebarToggle.png
+        │       │   ├── toolbarButton-sidebarToggle-rtl@2x.png
+        │       │   ├── toolbarButton-sidebarToggle-rtl.png
+        │       │   ├── toolbarButton-viewAttachments@2x.png
+        │       │   ├── toolbarButton-viewAttachments.png
+        │       │   ├── toolbarButton-viewOutline@2x.png
+        │       │   ├── toolbarButton-viewOutline.png
+        │       │   ├── toolbarButton-viewOutline-rtl@2x.png
+        │       │   ├── toolbarButton-viewOutline-rtl.png
+        │       │   ├── toolbarButton-viewThumbnail@2x.png
+        │       │   ├── toolbarButton-viewThumbnail.png
+        │       │   ├── toolbarButton-zoomIn@2x.png
+        │       │   ├── toolbarButton-zoomIn.png
+        │       │   ├── toolbarButton-zoomOut@2x.png
+        │       │   └── toolbarButton-zoomOut.png
+        │       ├── l10n.js
+        │       ├── locale
+        │       │   ├── ach
+        │       │   │   └── viewer.properties
+        │       │   ├── af
+        │       │   │   └── viewer.properties
+        │       │   ├── ak
+        │       │   │   └── viewer.properties
+        │       │   ├── an
+        │       │   │   └── viewer.properties
+        │       │   ├── ar
+        │       │   │   └── viewer.properties
+        │       │   ├── as
+        │       │   │   └── viewer.properties
+        │       │   ├── ast
+        │       │   │   └── viewer.properties
+        │       │   ├── az
+        │       │   │   └── viewer.properties
+        │       │   ├── be
+        │       │   │   └── viewer.properties
+        │       │   ├── bg
+        │       │   │   └── viewer.properties
+        │       │   ├── bn-BD
+        │       │   │   └── viewer.properties
+        │       │   ├── bn-IN
+        │       │   │   └── viewer.properties
+        │       │   ├── br
+        │       │   │   └── viewer.properties
+        │       │   ├── bs
+        │       │   │   └── viewer.properties
+        │       │   ├── ca
+        │       │   │   └── viewer.properties
+        │       │   ├── cs
+        │       │   │   └── viewer.properties
+        │       │   ├── csb
+        │       │   │   └── viewer.properties
+        │       │   ├── cy
+        │       │   │   └── viewer.properties
+        │       │   ├── da
+        │       │   │   └── viewer.properties
+        │       │   ├── de
+        │       │   │   └── viewer.properties
+        │       │   ├── el
+        │       │   │   └── viewer.properties
+        │       │   ├── en-GB
+        │       │   │   └── viewer.properties
+        │       │   ├── en-US
+        │       │   │   └── viewer.properties
+        │       │   ├── en-ZA
+        │       │   │   └── viewer.properties
+        │       │   ├── eo
+        │       │   │   └── viewer.properties
+        │       │   ├── es-AR
+        │       │   │   └── viewer.properties
+        │       │   ├── es-CL
+        │       │   │   └── viewer.properties
+        │       │   ├── es-ES
+        │       │   │   └── viewer.properties
+        │       │   ├── es-MX
+        │       │   │   └── viewer.properties
+        │       │   ├── et
+        │       │   │   └── viewer.properties
+        │       │   ├── eu
+        │       │   │   └── viewer.properties
+        │       │   ├── fa
+        │       │   │   └── viewer.properties
+        │       │   ├── ff
+        │       │   │   └── viewer.properties
+        │       │   ├── fi
+        │       │   │   └── viewer.properties
+        │       │   ├── fr
+        │       │   │   └── viewer.properties
+        │       │   ├── fy-NL
+        │       │   │   └── viewer.properties
+        │       │   ├── ga-IE
+        │       │   │   └── viewer.properties
+        │       │   ├── gd
+        │       │   │   └── viewer.properties
+        │       │   ├── gl
+        │       │   │   └── viewer.properties
+        │       │   ├── gu-IN
+        │       │   │   └── viewer.properties
+        │       │   ├── he
+        │       │   │   └── viewer.properties
+        │       │   ├── hi-IN
+        │       │   │   └── viewer.properties
+        │       │   ├── hr
+        │       │   │   └── viewer.properties
+        │       │   ├── hu
+        │       │   │   └── viewer.properties
+        │       │   ├── hy-AM
+        │       │   │   └── viewer.properties
+        │       │   ├── id
+        │       │   │   └── viewer.properties
+        │       │   ├── is
+        │       │   │   └── viewer.properties
+        │       │   ├── it
+        │       │   │   └── viewer.properties
+        │       │   ├── ja
+        │       │   │   └── viewer.properties
+        │       │   ├── ka
+        │       │   │   └── viewer.properties
+        │       │   ├── kk
+        │       │   │   └── viewer.properties
+        │       │   ├── km
+        │       │   │   └── viewer.properties
+        │       │   ├── kn
+        │       │   │   └── viewer.properties
+        │       │   ├── ko
+        │       │   │   └── viewer.properties
+        │       │   ├── ku
+        │       │   │   └── viewer.properties
+        │       │   ├── lg
+        │       │   │   └── viewer.properties
+        │       │   ├── lij
+        │       │   │   └── viewer.properties
+        │       │   ├── locale.properties
+        │       │   ├── lt
+        │       │   │   └── viewer.properties
+        │       │   ├── lv
+        │       │   │   └── viewer.properties
+        │       │   ├── mai
+        │       │   │   └── viewer.properties
+        │       │   ├── mk
+        │       │   │   └── viewer.properties
+        │       │   ├── ml
+        │       │   │   └── viewer.properties
+        │       │   ├── mn
+        │       │   │   └── viewer.properties
+        │       │   ├── mr
+        │       │   │   └── viewer.properties
+        │       │   ├── ms
+        │       │   │   └── viewer.properties
+        │       │   ├── my
+        │       │   │   └── viewer.properties
+        │       │   ├── nb-NO
+        │       │   │   └── viewer.properties
+        │       │   ├── nl
+        │       │   │   └── viewer.properties
+        │       │   ├── nn-NO
+        │       │   │   └── viewer.properties
+        │       │   ├── nso
+        │       │   │   └── viewer.properties
+        │       │   ├── oc
+        │       │   │   └── viewer.properties
+        │       │   ├── or
+        │       │   │   └── viewer.properties
+        │       │   ├── pa-IN
+        │       │   │   └── viewer.properties
+        │       │   ├── pl
+        │       │   │   └── viewer.properties
+        │       │   ├── pt-BR
+        │       │   │   └── viewer.properties
+        │       │   ├── pt-PT
+        │       │   │   └── viewer.properties
+        │       │   ├── rm
+        │       │   │   └── viewer.properties
+        │       │   ├── ro
+        │       │   │   └── viewer.properties
+        │       │   ├── ru
+        │       │   │   └── viewer.properties
+        │       │   ├── rw
+        │       │   │   └── viewer.properties
+        │       │   ├── sah
+        │       │   │   └── viewer.properties
+        │       │   ├── si
+        │       │   │   └── viewer.properties
+        │       │   ├── sk
+        │       │   │   └── viewer.properties
+        │       │   ├── sl
+        │       │   │   └── viewer.properties
+        │       │   ├── son
+        │       │   │   └── viewer.properties
+        │       │   ├── sq
+        │       │   │   └── viewer.properties
+        │       │   ├── sr
+        │       │   │   └── viewer.properties
+        │       │   ├── sv-SE
+        │       │   │   └── viewer.properties
+        │       │   ├── sw
+        │       │   │   └── viewer.properties
+        │       │   ├── ta
+        │       │   │   └── viewer.properties
+        │       │   ├── ta-LK
+        │       │   │   └── viewer.properties
+        │       │   ├── te
+        │       │   │   └── viewer.properties
+        │       │   ├── th
+        │       │   │   └── viewer.properties
+        │       │   ├── tl
+        │       │   │   └── viewer.properties
+        │       │   ├── tn
+        │       │   │   └── viewer.properties
+        │       │   ├── tr
+        │       │   │   └── viewer.properties
+        │       │   ├── uk
+        │       │   │   └── viewer.properties
+        │       │   ├── ur
+        │       │   │   └── viewer.properties
+        │       │   ├── vi
+        │       │   │   └── viewer.properties
+        │       │   ├── wo
+        │       │   │   └── viewer.properties
+        │       │   ├── xh
+        │       │   │   └── viewer.properties
+        │       │   ├── zh-CN
+        │       │   │   └── viewer.properties
+        │       │   ├── zh-TW
+        │       │   │   └── viewer.properties
+        │       │   └── zu
+        │       │       └── viewer.properties
+        │       ├── viewer.css
+        │       ├── viewer.html
+        │       └── viewer.js
+        └── pdfview.html
+
+112 directories, 366 files
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ [K[xuwy@planB01-pro pdf_view]$ tree --help
+usage: tree [-acdfghilnpqrstuvxACDFQNSUX] [-H baseHREF] [-T title ] [-L level [-R]]
+	[-P pattern] [-I pattern] [-o filename] [--version] [--help] [--inodes]
+	[--device] [--noreport] [--nolinks] [--dirsfirst] [--charset charset]
+	[--filelimit[=]#] [--si] [--timefmt[=]<f>] [<directory list>]
+  ------- Listing options -------
+  -a            All files are listed.
+  -d            List directories only.
+  -l            Follow symbolic links like directories.
+  -f            Print the full path prefix for each file.
+  -x            Stay on current filesystem only.
+  -L level      Descend only level directories deep.
+  -R            Rerun tree when max dir level reached.
+  -P pattern    List only those files that match the pattern given.
+  -I pattern    Do not list files that match the given pattern.
+  --noreport    Turn off file/directory count at end of tree listing.
+  --charset X   Use charset X for terminal/HTML and indentation line output.
+  --filelimit # Do not descend dirs with more than # files in them.
+  --timefmt <f> Print and format time according to the format <f>.
+  -o filename   Output to file instead of stdout.
+  --du          Print directory sizes.
+  --prune       Prune empty directories from the output.
+  -------- File options ---------
+  -q            Print non-printable characters as '?'.
+  -N            Print non-printable characters as is.
+  -Q            Quote filenames with double quotes.
+  -p            Print the protections for each file.
+  -u            Displays file owner or UID number.
+  -g            Displays file group owner or GID number.
+  -s            Print the size in bytes of each file.
+  -h            Print the size in a more human readable way.
+  --si          Like -h, but use in SI units (powers of 1000).
+  -D            Print the date of last modification or (-c) status change.
+  -F            Appends '/', '=', '*', '@', '|' or '>' as per ls -F.
+  --inodes      Print inode number of each file.
+  --device      Print device ID number to which each file belongs.
+  ------- Sorting options -------
+  -v            Sort files alphanumerically by version.
+  -r            Sort files in reverse alphanumeric order.
+  -t            Sort files by last modification time.
+  -c            Sort files by last status change time.
+  -U            Leave files unsorted.
+  --dirsfirst   List directories before files (-U disables).
+  ------- Graphics options ------
+  -i            Don't print indentation lines.
+  -A            Print ANSI lines graphic indentation lines.
+  -S            Print with ASCII graphics indentation lines.
+  -n            Turn colorization off always (-C overrides).
+  -C            Turn colorization on always.
+  ------- XML/HTML options -------
+  -X            Prints out an XML representation of the tree.
+  -H baseHREF   Prints out HTML format with baseHREF as top directory.
+  -T string     Replace the default HTML title and H1 header with string.
+  --nolinks     Turn off hyperlinks in HTML output.
+  ---- Miscellaneous options ----
+  --version     Print version and exit.
+  --help        Print usage and this help message and exit.
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$  echo 48449301 && /usr/bin/env && echo 41F446DE[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctree --help[K[K[K[K[K[Kd
+.
+└── www
+    └── pdfView
+        └── generic
+            ├── build
+            └── web
+                ├── cmaps
+                ├── images
+                └── locale
+                    ├── ach
+                    ├── af
+                    ├── ak
+                    ├── an
+                    ├── ar
+                    ├── as
+                    ├── ast
+                    ├── az
+                    ├── be
+                    ├── bg
+                    ├── bn-BD
+                    ├── bn-IN
+                    ├── br
+                    ├── bs
+                    ├── ca
+                    ├── cs
+                    ├── csb
+                    ├── cy
+                    ├── da
+                    ├── de
+                    ├── el
+                    ├── en-GB
+                    ├── en-US
+                    ├── en-ZA
+                    ├── eo
+                    ├── es-AR
+                    ├── es-CL
+                    ├── es-ES
+                    ├── es-MX
+                    ├── et
+                    ├── eu
+                    ├── fa
+                    ├── ff
+                    ├── fi
+                    ├── fr
+                    ├── fy-NL
+                    ├── ga-IE
+                    ├── gd
+                    ├── gl
+                    ├── gu-IN
+                    ├── he
+                    ├── hi-IN
+                    ├── hr
+                    ├── hu
+                    ├── hy-AM
+                    ├── id
+                    ├── is
+                    ├── it
+                    ├── ja
+                    ├── ka
+                    ├── kk
+                    ├── km
+                    ├── kn
+                    ├── ko
+                    ├── ku
+                    ├── lg
+                    ├── lij
+                    ├── lt
+                    ├── lv
+                    ├── mai
+                    ├── mk
+                    ├── ml
+                    ├── mn
+                    ├── mr
+                    ├── ms
+                    ├── my
+                    ├── nb-NO
+                    ├── nl
+                    ├── nn-NO
+                    ├── nso
+                    ├── oc
+                    ├── or
+                    ├── pa-IN
+                    ├── pl
+                    ├── pt-BR
+                    ├── pt-PT
+                    ├── rm
+                    ├── ro
+                    ├── ru
+                    ├── rw
+                    ├── sah
+                    ├── si
+                    ├── sk
+                    ├── sl
+                    ├── son
+                    ├── sq
+                    ├── sr
+                    ├── sv-SE
+                    ├── sw
+                    ├── ta
+                    ├── ta-LK
+                    ├── te
+                    ├── th
+                    ├── tl
+                    ├── tn
+                    ├── tr
+                    ├── uk
+                    ├── ur
+                    ├── vi
+                    ├── wo
+                    ├── xh
+                    ├── zh-CN
+                    ├── zh-TW
+                    └── zu
+
+112 directories
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$  echo 48449301 && /usr/bin/env && echo 41F446DE[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctree -d[K ./
+./
+└── www
+    └── pdfView
+        └── generic
+            ├── build
+            └── web
+                ├── cmaps
+                ├── images
+                └── locale
+                    ├── ach
+                    ├── af
+                    ├── ak
+                    ├── an
+                    ├── ar
+                    ├── as
+                    ├── ast
+                    ├── az
+                    ├── be
+                    ├── bg
+                    ├── bn-BD
+                    ├── bn-IN
+                    ├── br
+                    ├── bs
+                    ├── ca
+                    ├── cs
+                    ├── csb
+                    ├── cy
+                    ├── da
+                    ├── de
+                    ├── el
+                    ├── en-GB
+                    ├── en-US
+                    ├── en-ZA
+                    ├── eo
+                    ├── es-AR
+                    ├── es-CL
+                    ├── es-ES
+                    ├── es-MX
+                    ├── et
+                    ├── eu
+                    ├── fa
+                    ├── ff
+                    ├── fi
+                    ├── fr
+                    ├── fy-NL
+                    ├── ga-IE
+                    ├── gd
+                    ├── gl
+                    ├── gu-IN
+                    ├── he
+                    ├── hi-IN
+                    ├── hr
+                    ├── hu
+                    ├── hy-AM
+                    ├── id
+                    ├── is
+                    ├── it
+                    ├── ja
+                    ├── ka
+                    ├── kk
+                    ├── km
+                    ├── kn
+                    ├── ko
+                    ├── ku
+                    ├── lg
+                    ├── lij
+                    ├── lt
+                    ├── lv
+                    ├── mai
+                    ├── mk
+                    ├── ml
+                    ├── mn
+                    ├── mr
+                    ├── ms
+                    ├── my
+                    ├── nb-NO
+                    ├── nl
+                    ├── nn-NO
+                    ├── nso
+                    ├── oc
+                    ├── or
+                    ├── pa-IN
+                    ├── pl
+                    ├── pt-BR
+                    ├── pt-PT
+                    ├── rm
+                    ├── ro
+                    ├── ru
+                    ├── rw
+                    ├── sah
+                    ├── si
+                    ├── sk
+                    ├── sl
+                    ├── son
+                    ├── sq
+                    ├── sr
+                    ├── sv-SE
+                    ├── sw
+                    ├── ta
+                    ├── ta-LK
+                    ├── te
+                    ├── th
+                    ├── tl
+                    ├── tn
+                    ├── tr
+                    ├── uk
+                    ├── ur
+                    ├── vi
+                    ├── wo
+                    ├── xh
+                    ├── zh-CN
+                    ├── zh-TW
+                    └── zu
+
+112 directories
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ 
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ 
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ 
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ 
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ gi tgit[K[K[K[K[Kt init
+初始化空的 Git 版本库于 /home/xuwy/shiny_app/pdf_view/.git/
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ git status
+# 位于分支 master
+#
+# 初始提交
+#
+# 未跟踪的文件:
+#   （使用 "git add <file>..." 以包含要提交的内容）
+#
+#	.Rhistory
+#	.Rproj.user/
+#	app.R
+#	pdf_view.Rproj
+#	www/
+提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ git add .
+]0;~/shiny_app/pdf_view[xuwy@planB01-pro pdf_view]$ git p[Kcommit -am ''s'h'i'n'y' 'p'd'f' 'v'i'e'w'

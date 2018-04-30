@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1525049406514.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1F616DE4",
+    "lastKnownWriteTime" : 1525049016,
+    "last_content_update" : 1525049016,
+    "path" : "~/shiny_app/pdf_view/server/tab_prolist.R",
+    "project_path" : "server/tab_prolist.R",
+    "properties" : {
+        "cursorPosition" : "201,59",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/shiny_app/pdf_view",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

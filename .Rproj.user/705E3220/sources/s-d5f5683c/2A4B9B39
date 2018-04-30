@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1525048959910.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2A4B9B39",
+    "lastKnownWriteTime" : 1525049648,
+    "last_content_update" : 1525049648599,
+    "path" : "~/shiny_app/pdf_view/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "31,0",
+        "scrollLine" : "19"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,240 @@
+## 产品列表详细信息维护
+
+## variable value
+vt5 = reactiveValues(t50_prodtList = q_cmpProdtInfo("金诚财富"),
+                     t50_prodtID = NULL,
+                     t50_prodtName = NULL,
+                     t51_prodtFiles = NULL,
+                     t52_prodtInfo = NULL,
+                     t53_prodtProfit = NULL,
+                     t51_fileId = NULL,
+                     t52_idDel = NULL,
+                     t53_idDel = NULL)
+
+
+
+observeEvent(input$t50_btnSearch,{
+    vt5$t50_prodtList = q_searchProdtInfo(input$t50_searchCmp,
+                      input$t50_searchProdt,
+                      input$t50_prodtDTR)
+    if(is.null(vt5$t50_prodtList)){
+      sendSweetAlert(
+        session, title = "提示 !!", text = "查询无数据", type = "warning"
+      )
+    }
+  })
+
+observeEvent(input$t50_btnSearchCmp,{
+  vt5$t50_prodtList = q_cmpProdtInfo(input$t50_fortune)
+  if(is.null(vt5$t50_prodtList)){
+    sendSweetAlert(
+      session, title = "提示 !!", text = "查询无数据", type = "warning"
+    )
+  }
+})
+
+observeEvent(input$t50_fortuneType,
+  {
+    
+    if(input$t50_fortuneType == "全部"){
+      output$t5_uiCmp = renderUI({
+        fluidPage(
+          splitLayout(
+            # # 管理人关键字搜索
+            # searchInput(inputId = "t50_searchCmp",
+            #             label = "基金管理人", value = "", placeholder = "如：金诚",
+            #             btnReset = icon("recycle")),
+            # # 产品名称关键字搜索
+            # searchInput(inputId = "t50_searchProdt",
+            #             label = "产品名称", value = "", placeholder = "如：人鱼",
+            #             btnReset = icon("recycle")),
+            
+            # 管理人关键字搜索
+            textInput(inputId = "t50_searchCmp",
+                        label = "基金管理人", value = "", placeholder = "如：金诚"),
+            # 产品名称关键字搜索
+            textInput(inputId = "t50_searchProdt",
+                        label = "产品名称", value = "", placeholder = "如：人鱼"),
+            
+            ## 产品成立日期范围
+            dateRangeInput(inputId = "t50_prodtDTR", label = "成立日期",
+                           start = Sys.Date() - 90, end = Sys.Date(),
+                           language = "zh-CN"),
+            div(id = 't50_btnRela', style = 'width=100%; position:relative;',
+                actionBttn(inputId = 't50_btnSearch', label = "搜索", size = "sm", icon = icon('search'))
+            )
+            
+          )
+        )
+      })
+    }else{
+      output$t5_uiCmp = renderUI({
+        fluidPage(
+          splitLayout(
+            pickerInput(inputId = "t50_fortune",
+                        label = "财富公司", choices = fortune_nm,
+                        selected = c("金诚财富"),
+                        multiple = TRUE,
+                        options = list(`actions-box` = TRUE,
+                                       `deselect-all-text` = "全不选",
+                                       `select-all-text` = "全选",
+                                       `none-selected-text` = "空")),
+            div(id = 't50_btnRelaCmp', style = 'width=100%; position:relative;',
+                actionBttn(inputId = 't50_btnSearchCmp', label = "搜索", size = "sm", icon = icon('search'))
+            )
+          )
+        )
+      })
+    }
+    
+  }
+)
+
+
+## 财富公司旗下产品信息列表
+output$t50_DTList <- DT::renderDataTable({
+  if(is.null(vt5$t50_prodtList)){
+    return(NULL)
+  }else{
+    df_dt = vt5$t50_prodtList %>%
+      select(prodt_id, fortune_company, manager_name, fund_nm, establish_date, record_date, fund_type)
+    df_dt[["modify"]]<- paste0('
+                               <div class="btn-group" role="group" aria-label="Basic example">
+                               <button type="button" class="btn btn-secondary modifyt51em" id=t51em_', df_dt$prodt_id,'>编辑</button>
+                               </div>
+                               ')
+    col_out = which("prodt_id" %in% names(df_dt))
+    df_dt = df_dt[, -col_out]
+    df_dt
+  }
+}, escape = FALSE, width = "100%",
+rownames=FALSE,
+colnames = c("财富公司", "管理人", "产品", "成立日期", "备案日期", "类型", "操作"),
+server = FALSE, selection = "single",
+extensions = 'Buttons',
+options = list(
+  dom = 'Bfrtip',
+  buttons = c('copy', 'csv', 'excel'),
+  language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'),
+  pageLength = 15,
+  lengthChange = TRUE,
+  # autoWidth = TRUE,
+  initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#e1e1e1', 'color': '#000'});",
+    "}")
+))
+
+
+## 选取对应产品
+observeEvent({
+  input$t50_DTClick
+},{
+  if (input$t50_DTClickID %like% "t51em"){
+    vt5$t50_prodtID = gsub("t51em_","",input$t50_DTClickID)
+    vt5$t50_prodtName = vt5$t50_prodtList$fund_nm[vt5$t50_prodtList$prodt_id == vt5$t50_prodtID]
+    # 
+    vt5$t51_prodtFiles= q_proFiles(vt5$t50_prodtID)
+    vt5$t52_prodtInfo= q_proBaseInfo(vt5$t50_prodtID)
+    vt5$t53_prodtProfit= q_proProfits(vt5$t50_prodtID)
+
+    updateTabsetPanel(session, 't51_tabsetp', '信息维护')
+  }
+})
+
+
+
+## 整体页面
+output$t5_ui <- renderUI({
+  fluidPage(
+    tags$head(tags$style(HTML("
+                              .shiny-split-layout > div {
+                              overflow: visible;
+                              }
+                              "))),
+    tags$head(
+      tags$style(HTML('#t52_btnSave{position:relative; margin-left: 60%;}')),
+      tags$style(HTML('#t50_btnSearch{position:relative; margin-left: 30%; margin-top: 20px;}')),
+      tags$style(HTML('#t50_btnSearchCmp{position:relative; margin-left: 50%; margin-top: 20px;}'))
+    ),
+    tabsetPanel(id = "t51_tabsetp",
+                tabPanel("产品列表", 
+                         column(width = 2,
+                         pickerInput(inputId = "t50_fortuneType",
+                                     label = "企业类型", choices = c('对标公司', '全部'),
+                                     selected = "对标公司",
+                                     multiple = FALSE)),
+                         
+                         column(width = 10, uiOutput('t5_uiCmp')),
+                         
+                         hr(style="width='90%'"),
+                         DT::dataTableOutput("t50_DTList")),
+                
+                tabPanel("信息维护", 
+                         ## 产品名称
+                         br(),
+                         tags$div(class = "headerProdtName", id = NULL,
+                                  if(is.null(vt5$t50_prodtName)){
+                                    "请先选择产品！"
+                                  }else{
+                                    vt5$t50_prodtName
+                                  }
+                         ),
+                         br(),
+                         
+                         fluidRow(
+                           box(title = "上传产品相关文件", width = 12, 
+                               solidHeader = TRUE, status = "warning", height = 220,
+                               
+                               column(width = 3,
+                                      fileInput("t51_uploadFile", "上传文件",
+                                                accept=c("PDF/pdf", ".pdf"))),
+                               ## DT
+                               column(width = 6,
+                                      DT::dataTableOutput('t51_DTList'))
+                           ),
+                           
+                           column(width = 7,
+                                  box(
+                                    title = "文件内容", width = NULL, 
+                                    solidHeader = TRUE, status = "primary", height = 700,
+                                    
+                                    uiOutput('iframe_source')
+                                  )
+                           ),
+                           
+                           
+                           column(width = 5,
+                                  box(
+                                    title = "具体信息", width = NULL, solidHeader = TRUE, status = "danger", 
+                                    uiOutput('ui_t52'),
+                                    div(id = 't52_saveRela', style = 'width=100%; position:relative;',
+                                        actionBttn(inputId = 't52_btnSave', label = '保存基本信息', icon = icon('save'))
+                                    ),
+                                    
+                                    hr(),
+                                    actionBttn(inputId = 't53_btnAddui', label = '新增收益信息', icon = icon('plus')),
+                                    br(),br(),
+                                    DT::dataTableOutput('t53_DTList')
+                                  )
+                           )
+                         )
+                         
+                ),
+                useSweetAlert(),
+                tags$script("$(document).on('click', '#t50_DTList button', function () {
+                            Shiny.onInputChange('t50_DTClickID',this.id);
+                            Shiny.onInputChange('t50_DTClick', Math.random())});"),
+                tags$script("$(document).on('click', '#t51_DTList button', function () {
+                            Shiny.onInputChange('t51_DTClickID',this.id);
+                            Shiny.onInputChange('t51_DTClick', Math.random())});"),
+                tags$script("$(document).on('click', '#t53_DTList button', function () {
+                            Shiny.onInputChange('t53_DTClickID',this.id);
+                            Shiny.onInputChange('t53_DTClick', Math.random())});")
+    ))
+})
+
+
+source('server/tab_prolist_upload.R', local = TRUE)
+source('server/tab_prolist_base.R', local = TRUE)
+source('server/tab_prolist_profit.R', local = TRUE)
